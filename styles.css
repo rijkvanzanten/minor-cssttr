@@ -16,16 +16,17 @@ body > section {
 ------------------------------------------------------------------------------*/
 #login {
 	background-color: #483D8B;
-	padding: 5em;
+	padding: 5em 0;
 }
 
 #login form {
+    box-sizing: border-box;
 	background-color: #5577C1;
 	padding: 50px;
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	max-width: 17em;
+    width: 100%;
+	max-width: 25em;
 	margin: auto;
 	color: #FFFAFA;
 	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
