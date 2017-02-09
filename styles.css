@@ -1,80 +1,173 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 "Helvetica Neue", sans-serif;
-	margin: 0;
+    margin: 0;
+}
+
+img, video {
+    max-width: 100%;
 }
 
 body > h1 {
-	text-align: center;
+    text-align: center;
 }
 
 body > section {
-	margin: 5em 0;
+    margin: 5em 0;
 }
 
 /* Login Form
 ------------------------------------------------------------------------------*/
 #login {
-	background-color: #483D8B;
-	padding: 5em;
+    background-color: #483D8B;
+    padding: 5em 0;
 }
 
 #login form {
-	background-color: #5577C1;
-	padding: 50px;
-	display: flex;
-	flex-direction: column;
-	width: 50%;
-	max-width: 17em;
-	margin: auto;
-	color: #FFFAFA;
-	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    background-color: #5577C1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 25em;
+    margin: auto;
+    color: #FFFAFA;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
 #login form label {
-	margin-top: 1em;
-	margin-bottom: .5em;
-	font-size: .8em;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    font-size: .8em;
 }
 
 #login form input {
-	color: #66656a;
-	padding: 1em;
-	outline: 0;
-	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    color: #66656a;
+    padding: 1em;
+    outline: 0;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #login form input:focus {
-	outline: 1px solid #66656a;
+    outline: 1px solid #66656a;
 }
 
 #login form a {
-	order: 1;
-	text-align: center;
-	color: white;
-	font-size: .8em;
-	margin-top: 1rem;
+    order: 1;
+    text-align: center;
+    color: white;
+    font-size: .8em;
+    margin-top: 1rem;
 }
 
 #login form div {
-	align-self: center;
-	margin: 1em auto;
-	cursor: pointer;
+    align-self: center;
+    margin: 1em auto;
+    cursor: pointer;
 }
 
 #login form button {
-	-webkit-appearance: none;
-	appearance: none;
-	border: none;
-	background-color: #EAEC1A;
-	font-size: 1rem;
-	color: #333333;
-	padding: 1em;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: #EAEC1A;
+    font-size: 1rem;
+    color: #333333;
+    padding: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
 #login form button:hover {
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-	cursor: pointer;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor: pointer;
+}
+
+/* Picture with subtitle
+------------------------------------------------------------------------------*/
+#picture-with-subtitle {
+    background-color: #FFEDDE;
+    padding: 5em 0;
+    position: relative;
+}
+
+#picture-with-subtitle h1 {
+    text-align: justify;
+    width: 80%;
+    max-width: 15em;
+    margin: auto;
+}
+
+#picture-with-subtitle h1:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+#picture-with-subtitle img[data-orientation=portrait] {
+    display: none;
+}
+
+#picture-with-subtitle article {
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+#picture-with-subtitle figure {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    font-size: .8em;
+}
+
+#picture-with-subtitle img {
+    width: 100%;
+}
+
+#picture-with-subtitle figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1em;
+}
+
+#picture-with-subtitle footer {
+    opacity: .5;
+    font-size: .5em;
+    text-align: right;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#picture-with-subtitle footer:hover {
+    opacity: 1;
+}
+
+#picture-with-subtitle a {
+    color: inherit;
+}
+
+@supports (-webkit-backdrop-filter: blur(15px)) {
+    #picture-with-subtitle figcaption {
+        background: 0;
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+    }
+}
+
+@media (orientation: portrait) {
+    #picture-with-subtitle img[data-orientation=landscape] {
+        display: none;
+    }
+
+    #picture-with-subtitle img[data-orientation=portrait] {
+        display: block;
+    }
 }
