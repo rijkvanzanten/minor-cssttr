@@ -121,12 +121,24 @@ body > section {
 #picture-with-subtitle figure {
     width: 100%;
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     font-size: .8em;
+    max-width: 50em;
 }
 
 #picture-with-subtitle img {
     width: 100%;
+}
+
+@supports (object-fit: cover) {
+    #picture-with-subtitle {
+        max-width: none;
+    }
+
+    #picture-with-subtitle img {
+        object-fit: cover;
+        max-height: 80vh;
+    }
 }
 
 #picture-with-subtitle figcaption {
