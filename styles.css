@@ -309,10 +309,12 @@ body > section {
 }
 
 #rating fieldset {
+    box-sizing: border-box;
     background-color: white;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    width: 100%;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
     margin: auto;
     border: none;
     padding: 3em;
