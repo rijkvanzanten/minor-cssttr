@@ -23,6 +23,7 @@ body > section {
 }
 
 #login form {
+    box-sizing: border-box;
     background-color: #5577C1;
     padding: 50px;
     display: flex;
