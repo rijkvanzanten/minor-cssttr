@@ -13,13 +13,13 @@ body > h1 {
 
 body > section {
     margin: 5em 0;
+    padding: 4em 0;
 }
 
 /* Login Form
 ------------------------------------------------------------------------------*/
 #login {
     background-color: #483D8B;
-    padding: 5em 0;
 }
 
 #login form {
@@ -96,7 +96,8 @@ body > section {
     width: -moz-max-content;
     width: max-content;
     padding: 2em;
-    box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.3)
+    box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.3);
+    margin: auto;
 }
 
 #nav ul {
@@ -130,7 +131,6 @@ body > section {
 
 #chat {
     background-color: #00e676;
-    padding: 4em 0;
 }
 
 #chat div {
@@ -243,4 +243,61 @@ body > section {
     font-size: 1rem;
     color: #00b4ff;
     cursor: pointer;
+}
+
+/* Step-indicator
+------------------------------------------------------------------------------*/
+#step-indicator {
+    background-color: #0c164f;
+    color: white;
+}
+
+#step-indicator a {
+    color: inherit;
+}
+
+#step-indicator progress {
+    display: none;
+}
+
+#step-indicator nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#step-indicator ol {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    max-width: 30em;
+    padding-top: 15px;
+    border-top: 3px solid #bf2900;
+    counter-reset: ol;
+    padding-left: 0;
+}
+
+#step-indicator li {
+    flex-grow: 1;
+    flex-basis: 5em;
+    position: relative;
+    text-align: center;
+}
+
+#step-indicator li::after {
+    counter-increment: ol;
+    content: counter(ol);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #bf2900;
 }
