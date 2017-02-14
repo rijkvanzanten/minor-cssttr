@@ -1,10 +1,5 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-"Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     margin: 0;
 }
 
@@ -39,24 +34,23 @@ body > section {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
-#login form label {
+#login label {
     margin-top: 1em;
     margin-bottom: .5em;
     font-size: .8em;
 }
 
-#login form input {
+#login input {
     color: #66656a;
     padding: 1em;
     outline: 0;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-#login form input:focus {
-    outline: 1px solid #66656a;
+#login input:focus {
+    outline: 3px solid #FF8080;
 }
 
-#login form a {
+#login a {
     order: 1;
     text-align: center;
     color: white;
@@ -64,13 +58,13 @@ body > section {
     margin-top: 1rem;
 }
 
-#login form div {
+#login div {
     align-self: center;
     margin: 1em auto;
     cursor: pointer;
 }
 
-#login form button {
+#login button {
     -webkit-appearance: none;
     appearance: none;
     border: none;
@@ -79,95 +73,171 @@ body > section {
     color: #333333;
     padding: 1em;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-#login form button:hover {
+#login button:hover, #login button:focus {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     cursor: pointer;
 }
 
-/* Picture with subtitle
+/* Navigation
 ------------------------------------------------------------------------------*/
-#picture-with-subtitle {
-    background-color: #FFEDDE;
-    padding: 5em 0;
+#nav {
+    background-color: #f5f5f5;
+}
+
+#nav nav {
+    background-color: #000414;
+    color: white;
+    width: 7.8em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    padding: 2em;
+    box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.3)
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nav ul ul {
+    padding-left: 1em;
+}
+
+#nav a {
+    color: inherit;
+    text-decoration: none;
+    padding: .5em 1em;
+    display: block;
+    transition: background-color 256ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#nav a:hover {
+    background-color: #FF35B6;
+}
+
+#nav a:focus {
+    outline: 0;
+    border: 3px solid #FF35B6;
+}
+
+/* Chat
+------------------------------------------------------------------------------*/
+
+#chat {
+    background-color: #00e676;
+    padding: 4em;
+}
+
+#chat div {
+    width: 100%;
+    max-width: 20em;
+    margin: 0 auto;
+    background: url('/asanoha-400px.png');
+    padding: 0 2em;
+    padding-bottom: 4em;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
-#picture-with-subtitle h1 {
-    text-align: justify;
-    width: 80%;
-    max-width: 15em;
-    margin: auto;
+#chat ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: scroll;
 }
 
-#picture-with-subtitle h1:after {
+#chat p:not(footer p) {
+    background-color: white;
+    padding: 1em;
+    border-radius: .5em;
+    position: relative;
+    box-shadow: 0 1px 0 0 #c6c6c7;
+    margin-bottom: .2em;
+}
+
+#chat p:not(footer p)::after {
     content: '';
-    display: inline-block;
-    width: 100%;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-color: transparent white;
+    border-width: 6px 10px 6px 0;
+    border-style: solid;
+    display: block;
+    width: 0;
+    filter: drop-shadow(0 1px 0 #c6c6c7);
 }
 
-#picture-with-subtitle img[data-orientation=portrait] {
-    display: none;
+#chat [data-user=current] {
+    align-self: flex-end;
 }
 
-#picture-with-subtitle article {
-    position: relative;
-    width: 80%;
-    margin: auto;
+#chat [data-user=current] p:not(footer p) {
+    background-color: #dffec7;
 }
 
-#picture-with-subtitle figure {
-    width: 100%;
-    position: relative;
+#chat [data-user=current] p::after {
+    left: auto;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-color: transparent #dffec7;
+    border-width: 6px 0 6px 10px;
+    border-style: solid;
+    display: block;
+    width: 0;
+    filter: drop-shadow(0 1px 0 #c6c6c7);
+}
+
+#chat footer p {
+    color: hsl(0, 0%, 70%);
+    font-size: .6em;
+    text-transform: lowercase;
     margin: 0;
-    font-size: .8em;
 }
 
-#picture-with-subtitle img {
-    width: 100%;
+#chat [data-user=current] footer p {
+    text-align: right;
 }
 
-#picture-with-subtitle figcaption {
+#chat form {
+    box-sizing: border-box;
+    background-color: #fefefe;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 1em;
+    display: flex;
+    justify-content: center;
+    padding: .5em 2em;
 }
 
-#picture-with-subtitle footer {
-    opacity: .5;
-    font-size: .5em;
-    text-align: right;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+#chat label {
+    display: none;
 }
 
-#picture-with-subtitle footer:hover {
-    opacity: 1;
+#chat textarea {
+    flex-grow: 1;
+    flex-basis: 10em;
+    font-size: 1rem;
+    border: 1px solid #efefef;
+    border-radius: 4px;
+    padding: .5em;
 }
 
-#picture-with-subtitle a {
-    color: inherit;
-}
-
-@supports (-webkit-backdrop-filter: blur(15px)) {
-    #picture-with-subtitle figcaption {
-        background: 0;
-        -webkit-backdrop-filter: blur(15px);
-        backdrop-filter: blur(15px);
-    }
-}
-
-@media (orientation: portrait) {
-    #picture-with-subtitle img[data-orientation=landscape] {
-        display: none;
-    }
-
-    #picture-with-subtitle img[data-orientation=portrait] {
-        display: block;
-    }
+#chat button {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #00b4ff;
+    cursor: pointer;
 }
