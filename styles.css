@@ -301,3 +301,59 @@ body > section {
     margin: auto;
     background-color: #bf2900;
 }
+
+/* Rating
+------------------------------------------------------------------------------*/
+#rating {
+    background-color: #438001;
+}
+
+#rating fieldset {
+    background-color: white;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    margin: auto;
+    border: none;
+    padding: 3em;
+    position: relative;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+#rating legend {
+    position: absolute;
+    margin: 1em 0;
+    font-size: 1.2em;
+    top: .5em;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+#rating label {
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 2em;
+}
+
+#rating svg {
+    width: 2em;
+    display: block;
+    margin: 1em auto;
+    transition: all 220ms cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+#rating input {
+    display: none;
+}
+
+#rating input:indeterminate + label svg, #rating input:not(:checked) + label svg {
+    filter: grayscale(100%);
+}
+
+#rating input:checked + label svg {
+    filter: grayscale(0);
+    transform: scale(1.8) rotate(360deg);
+}
