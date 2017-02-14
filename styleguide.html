@@ -12,47 +12,49 @@
 </head>
 <body>
 
-<h1>Living Styleguide</h1>
+    <h1>Living Styleguide</h1>
 
-<section id="login">
-  <form action="/" method="post">
-    <label for="field-email">Email</label>
-    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+    <section id="login">
+        <form action="/" method="post">
+            <label for="field-email">Email</label>
+            <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
 
-    <label for="field-password">Password</label>
-    <input type="password" id="field-password" name="field-password" required>
+            <label for="field-password">Password</label>
+            <input type="password" id="field-password" name="field-password" required>
 
-    <div>
-      <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-      <label for="field-stay-logged-in">Stay logged in</label>
-    </div>
+            <div>
+                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+                <label for="field-stay-logged-in">Stay logged in</label>
+            </div>
 
-    <button type="submit">Login</button>
+            <button type="submit">Login</button>
 
-    <a href="/">Forgot password</a>
-  </form>
-</section>
+            <a href="/">Forgot password</a>
+        </form>
+    </section>
 
-<section id="picture-with-subtitle">
-    <article>
-    	<h1>This picture has a title</h1>
-    	<figure>
-    		<!-- Portrait -->
-    		<img data-orientation="portrait" src="https://vasilis.nl/voto/fotos/klein/170126170241-we-hebben-een-bortusk-1280.jpg" alt="A drawing of a colorful monster on a newspaper" />
+    <section id="nav">
+        <nav>
 
-    		<!-- Landscape -->
-    		<img data-orientation="landscape" src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" />
-            <figcaption>
-        		<p>
-        			There's also this big and in depth description of the picture. You often see this on newssites or photo blogs. You could also replace the photo with a video if needed.
-        		</p>
-        		<footer>
-        			<time datetime="2017-02-06">6-2-2017</time> © 2017 <a href="https://vasilis.nl">Vasilis van Gemert</a>
-        		</footer>
-        	</figcaption>
-    	</figure>
-    </article>
-</section>
+            <h1>Main navigation</h1>
 
+            <ul>
+                <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
+                <li>
+                    <a href="/products">Products</a>
+
+                    <ul>
+                        <li><a href="/products/rock">Rock</a></li>
+                        <li><a href="/products/paper">Paper</a></li>
+                        <li><a href="/products/scissors">Scissors</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+        </nav>
+    </section>
 </body>
 </html>
