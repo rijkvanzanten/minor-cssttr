@@ -138,7 +138,8 @@ body > section {
     width: 100%;
     max-width: 20em;
     margin: 0 auto;
-    background: url('/asanoha-400px.png');
+    background-color: #f4f5f6;
+    background-image: url('/asanoha-400px.png');
     padding: 0;
     padding-bottom: 4em;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.2);
