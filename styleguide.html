@@ -16,22 +16,20 @@
 
 <section id="login">
   <form action="/" method="post">
+    <label for="field-email">Email</label>
+    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
 
-      <label for="field-email">Email</label>
-      <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+    <label for="field-password">Password</label>
+    <input type="password" id="field-password" name="field-password" required>
 
-      <label for="field-password">Password</label>
-      <input type="password" id="field-password" name="field-password" required>
+    <div>
+      <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+      <label for="field-stay-logged-in">Stay logged in</label>
+    </div>
 
-      <div>
-          <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-          <label for="field-stay-logged-in">Stay logged in</label>
-      </div>
+    <button type="submit">Login</button>
 
-      <a href="/">Forgot password</a>
-
-      <button type="submit">Login</button>
-
+    <a href="/">Forgot password</a>
   </form>
 </section>
 
