@@ -1,0 +1,57 @@
+/**
+ * File order:
+ * - tags
+ * - attributes
+ * - components
+ * - layout
+ * - theme
+ * - helpers
+ *
+ * Selector order:
+ * - positioning
+ * - display & box-model
+ * - color
+ * - text
+ * - other
+ *
+ * Follows Necolas' Idiomatic-CSS principles
+ * https://github.com/necolas/idiomatic-css
+ *
+ * Process CSS with Myth
+ * http://myth.io/
+ *
+ * Lint with stylelint to enforce style rules
+ * https://github.com/stylelint/stylelint
+ */
+
+* {
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* \(*+*)/ */
+* + * {
+  margin-top: 1.5em;
+}
+
+html {
+  font-size: 125%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+body,
+li {
+  margin-top: 0;
+}
+
+label {
+  display: block;
+}
+
+label + * {
+  margin-top: 0.5rem;
+}
