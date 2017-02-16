@@ -31,6 +31,7 @@
 :root {
   --primary-color: #2c2c57;
   --secondary-color: #5acc95;
+  --text-color: #333;
   --scale: 1.618;
   --scale-em: calc(var(--scale) * 1em);
 }
@@ -51,7 +52,7 @@ html {
   font-size: 115%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   line-height: var(--scale);
-  color: #333;
+  color: var(--text-color);
 }
 
 @media (max-width: 26em) {
@@ -82,7 +83,6 @@ svg {
   max-width: 100%;
 }
 
-
 h1 {
   font-size: calc(var(--scale) * var(--scale) * 1em);
 }
@@ -102,21 +102,63 @@ ul {
    Attributes
    ========================================================================== */
 
+/**
+ * Add emoji after status elements
+ */
+[data-status] {
+  margin-left: 5px;
+}
+
+[data-status=READ]::after {
+  content: '🙋🏻‍♂️';
+}
+
+[data-status=DELIVERED]::after {
+  content: '💁🏻‍♂️';
+}
+
 /* ==========================================================================
    Components
    ========================================================================== */
+
 .chat {
   background: url('asanoha-400px.png');
-}
-
-.chat ol {
+  max-width: 35em;
+  display: flex;
+  flex-direction: column;
+  padding: var(--scale-em);
   list-style: none;
-  padding: 1em;
 }
 
-.chat p:not(footer p) {
+.chat li {
+  margin-bottom: calc(1em / var(--scale));
+}
+
+.chat [data-user=current] {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat li > p {
   background-color: white;
-  max-width: -webkit-max-content;
   max-width: max-content;
   padding: calc(1em / var(--scale)) calc(var(--scale) * 1em);
+  display: inline-block;
+  border-radius: calc(1em / var(--scale) / var(--scale));
+  box-shadow: 0 1px 3px 0 color(var(--text-color) lightness(80%));
+}
+
+.chat [data-user=current] > p {
+  background-color: color(var(--secondary-color) lightness(80%));
+}
+
+.chat footer {
+  margin: 0;
+  margin-top: calc(1em / var(--scale) / var(--scale));
+}
+
+.chat footer p {
+  font-size: calc(1em / var(--scale));
+  margin: 0;
+  color: color(var(--text-color) lightness(50%));
 }
