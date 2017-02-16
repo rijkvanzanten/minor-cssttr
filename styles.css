@@ -55,3 +55,9 @@ label {
 label + * {
   margin-top: 0.5rem;
 }
+
+img,
+picture,
+video {
+  max-width: 100%;
+}
