@@ -58,6 +58,7 @@ label + * {
 
 img,
 picture,
-video {
+video,
+svg {
   max-width: 100%;
 }
