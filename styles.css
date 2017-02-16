@@ -43,6 +43,10 @@ html {
   color: #333;
 }
 
+@media (max-width: 26em) {
+  html { font-size: 1rem; }
+}
+
 body,
 li {
   margin-top: 0;
