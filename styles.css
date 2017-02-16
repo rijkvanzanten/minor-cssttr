@@ -81,3 +81,42 @@ video,
 svg {
   max-width: 100%;
 }
+
+
+h1 {
+  font-size: calc(var(--scale) * var(--scale) * 1em);
+}
+
+h2 {
+  font-size: var(--scale-em);
+}
+
+article,
+p,
+ol,
+ul {
+  max-width: 35em;
+}
+
+/* ==========================================================================
+   Attributes
+   ========================================================================== */
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+.chat {
+  background: url('asanoha-400px.png');
+}
+
+.chat ol {
+  list-style: none;
+  padding: 1em;
+}
+
+.chat p:not(footer p) {
+  background-color: white;
+  max-width: -webkit-max-content;
+  max-width: max-content;
+  padding: calc(1em / var(--scale)) calc(var(--scale) * 1em);
+}
