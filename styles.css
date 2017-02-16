@@ -142,7 +142,7 @@ ul {
 
 .chat li > p {
   display: inline-block;
-  background-color: white;
+  background-color: #fff;
   max-width: max-content;
   padding: calc(1em / var(--scale)) calc(var(--scale) * 1em);
   border-radius: calc(1em / var(--scale) / var(--scale));
@@ -198,7 +198,7 @@ ul {
   font-size: 1rem;
   background-color: transparent;
   cursor: pointer;
-  color: white;
+  color: #fff;
 }
 
 .chat + form label {
