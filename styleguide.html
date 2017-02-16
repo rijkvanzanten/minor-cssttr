@@ -113,11 +113,38 @@
     <article>
         <h1>This picture has a title</h1>
         <figure>
-            <!-- Portrait -->
-            <img src="https://vasilis.nl/voto/fotos/klein/170126170241-we-hebben-een-bortusk-1280.jpg" alt="A drawing of a colorful monster on a newspaper" />
-
-            <!-- Landscape -->
-            <!-- <img src="https://vasilis.nl/voto/fotos/klein/161001174911-verhuizen-1280.jpg" alt="A bulldozer transporting a beach house along a sunny beach" /> -->
+            <picture>
+                <source
+                    sizes="(max-width: 570px) 100vw, 570px"
+                    srcset="
+                        img/verhuizen_portrait_200.jpg 200w,
+                        img/verhuizen_portrait_339.jpg 339w,
+                        img/verhuizen_portrait_570.jpg 570w"
+                    media="(orientation: portrait)" />
+                <source
+                    sizes="(max-width: 1280px) 100vw, 1280px"
+                    srcset="
+                        img/verhuizen_landscape_200.jpg 200w,
+                        img/verhuizen_landscape_425.jpg 425w,
+                        img/verhuizen_landscape_599.jpg 599w,
+                        img/verhuizen_landscape_726.jpg 726w,
+                        img/verhuizen_landscape_847.jpg 847w,
+                        img/verhuizen_landscape_878.jpg 878w,
+                        img/verhuizen_landscape_1280.jpg 1280w"
+                    media="(orientation: landscape)" />
+                <img
+                    sizes="(max-width: 1280px) 100vw, 1280px"
+                    srcset="
+                        img/verhuizen_landscape_200.jpg 200w,
+                        img/verhuizen_landscape_425.jpg 425w,
+                        img/verhuizen_landscape_599.jpg 599w,
+                        img/verhuizen_landscape_726.jpg 726w,
+                        img/verhuizen_landscape_847.jpg 847w,
+                        img/verhuizen_landscape_878.jpg 878w,
+                        img/verhuizen_landscape_1280.jpg 1280w"
+                    src="verhuizen_landscape_1280.jpg"
+                    alt="A bulldozer transporting a beach house along a sunny beach">
+            </picture>
             <figcaption>
                 <p>
                     There's also this big and in depth description of the picture. You often see this on newssites or photo blogs. You could also replace the photo with a video if needed.
