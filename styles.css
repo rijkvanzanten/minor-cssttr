@@ -105,7 +105,7 @@ ul {
 /**
  * Add emoji after status elements
  */
-[data-status] {
+[data-status]::after {
   margin-left: 5px;
 }
 
@@ -128,6 +128,7 @@ ul {
   flex-direction: column;
   padding: var(--scale-em);
   list-style: none;
+  box-sizing: border-box;
 }
 
 .chat li {
@@ -145,11 +146,15 @@ ul {
   padding: calc(1em / var(--scale)) calc(var(--scale) * 1em);
   display: inline-block;
   border-radius: calc(1em / var(--scale) / var(--scale));
-  box-shadow: 0 1px 3px 0 color(var(--text-color) lightness(80%));
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+  /* box-shadow: 0 1px 3px 0 color(var(--text-color) lightness(80%)); */
 }
 
 .chat [data-user=current] > p {
-  background-color: color(var(--secondary-color) lightness(80%));
+  background-color: #a6dfc3;
+
+  /* background-color: color(var(--secondary-color) lightness(80%)); */
 }
 
 .chat footer {
@@ -160,5 +165,42 @@ ul {
 .chat footer p {
   font-size: calc(1em / var(--scale));
   margin: 0;
-  color: color(var(--text-color) lightness(50%));
+  color: #3335;
+
+  /* color: color(var(--text-color) lightness(50%)); */
+}
+
+.chat + form {
+  max-width: 35em;
+  background-color: #2c2c5788;
+  margin-top: 0;
+  display: flex;
+  padding: calc(1em / var(--scale) / var(--scale)) calc(1em / var(--scale));
+  box-sizing: border-box;
+  align-items: center;
+
+  /* background-color: color(var(--primary-color) lightness(80%)); */
+}
+
+.chat + form textarea {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 1rem;
+  border-radius: calc(1em / var(--scale) / var(--scale));
+  padding: calc(1em / var(--scale) / var(--scale));
+  margin-right: calc(1em / var(--scale));
+}
+
+.chat + form button {
+  margin: 0;
+  appearance: none;
+  border: none;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.chat + form label {
+  display: none;
 }
