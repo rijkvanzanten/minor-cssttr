@@ -52,6 +52,8 @@
     });
   });
 
+  document.addEventListener('click', allListItemsInactive);
+
   function listItemActive(childUl) {
     childUl.setAttribute('aria-hidden', 'false');
     childUl.classList.add(config.activeClass);
