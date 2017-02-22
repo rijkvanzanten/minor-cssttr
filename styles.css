@@ -62,7 +62,7 @@ html {
     --scale: 1.414;
   }
 
-  html { font-size: 1rem; }
+  html { font-size: 0.9rem; }
 }
 
 body,
@@ -94,12 +94,12 @@ svg {
 }
 
 h1 {
-  font-size: calc(var(--scale) * var(--scale) * var(--scale) * 1em);
+  font-size: calc(2em + var(--scale) * var(--scale) * var(--scale) * 1vw);
   text-align: center;
   padding: 1em 0.5em;
   background: var(--gradient);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 9px transparent;
+  -webkit-text-stroke: 4px transparent;
   letter-spacing: 10px;
   color: black;
 }
@@ -123,7 +123,8 @@ nav ul {
 
 nav li {
   position: relative;
-  width: 100%;
+  flex-basis: 5em;
+  flex-grow: 1;
 }
 
 nav a {
@@ -140,7 +141,8 @@ nav a {
 
 nav ul ul {
   position: absolute;
-  top: 2.5em;
+  z-index: 5;
+  top: 3.5em;
   left: -9999px;
   opacity: 0;
   min-width: min-content-width;
@@ -148,9 +150,11 @@ nav ul ul {
 }
 
 nav > ul {
+  position: relative;
   display: flex;
   width: 100%;
   max-width: 100%;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -166,11 +170,14 @@ nav li:hover > a {
 nav li:hover ul,
 nav li:focus ul,
 ul.show-menu {
-  opacity: 1;
-  top: 3.5em;
   left: 0;
   width: 100%;
+  opacity: 1;
   box-sizing: border-box;
+}
+
+nav ul li ul li {
+  width: 100%;
 }
 
 /* ==========================================================================
