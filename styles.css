@@ -96,7 +96,7 @@ svg {
 h1 {
   font-size: calc(2em + var(--scale) * var(--scale) * var(--scale) * 1vw);
   text-align: center;
-  padding: 1em 0.5em;
+  padding: 0.5em;
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-stroke: 4px transparent;
@@ -113,6 +113,10 @@ p,
 ol,
 ul {
   max-width: 35em;
+}
+
+nav {
+  margin: 0;
 }
 
 nav ul {
