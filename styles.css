@@ -115,6 +115,64 @@ ul {
   max-width: 35em;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  position: relative;
+  width: 100%;
+}
+
+nav a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3px;
+}
+
+nav ul ul {
+  position: absolute;
+  top: 2.5em;
+  left: -9999px;
+  opacity: 0;
+  min-width: min-content-width;
+  background: #333;
+}
+
+nav > ul {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: space-around;
+}
+
+nav li > a:hover,
+nav li > a:focus,
+nav li:focus > a,
+nav li:hover > a {
+  background: #b8cbb8;
+  background: var(--gradient);
+  outline: 0;
+}
+
+nav li:hover ul,
+nav li:focus ul,
+ul.show-menu {
+  opacity: 1;
+  top: 3.5em;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* ==========================================================================
    Attributes
    ========================================================================== */
