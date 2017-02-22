@@ -3,9 +3,16 @@
 /**
  * Modeled after Terrill Thompson's example in jQuery
  * http: //staff.washington.edu/tft/tests/menus/simplyaccessible/index.html
+ *
+ * et all aria labels from JavaScript because in a real-world-scenario, the
+ *  listitems are unknown and rendered dynamically
  */
 
 (function() {
+  const config = {
+    activeClass: 'show-menu',
+  };
+
   const keyCodeMap = {
     48: '0', 49: '1', 50: '2', 51: '3', 52: '4', 53: '5', 54: '6', 55: '7', 56: '8', 57: '9', 59: ';',
     65: 'a', 66: 'b', 67: 'c', 68: 'd', 69: 'e', 70: 'f', 71: 'g', 72: 'h', 73: 'i', 74: 'j', 75: 'k', 76: 'l',
@@ -23,10 +30,39 @@
     submenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', - 1));
   });
 
-  // Add aria-haspopup for appropriate items
-  document.querySelectorAll('[aria-role="menubar"] > li').forEach(topLevelMenuItem => {
-    if(topLevelMenuItem.querySelectorAll('ul').length) {
+  // Toplevel menu items
+  document.querySelectorAll('[aria-role="menubar"] > li > a').forEach(topLevelMenuItem => {
+    const childUl = topLevelMenuItem.parentNode.querySelector('ul');
+
+    // Add aria-haspopup for appropriate items
+    if(childUl) {
       topLevelMenuItem.setAttribute('aria-haspopup', 'true');
     }
+
+    // Add hover event listener which modifies class and aria state to active
+    topLevelMenuItem.addEventListener('mouseover', function() {
+      allListItemsInactive();
+      if(childUl) listItemActive(childUl);
+    });
+
+    // Add focus event listener which modifies class and aria state to active
+    topLevelMenuItem.addEventListener('focus', function() {
+      allListItemsInactive();
+      if(childUl) listItemActive(childUl);
+    });
   });
+
+  function listItemActive(childUl) {
+    childUl.setAttribute('aria-hidden', 'false');
+    childUl.classList.add(config.activeClass);
+    childUl.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', 0));
+  }
+
+  function allListItemsInactive() {
+    document.querySelectorAll(`.${config.activeClass}`).forEach(activeMenu => {
+      activeMenu.setAttribute('aria-hidden', 'true');
+      activeMenu.classList.remove(config.activeClass);
+      activeMenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', -1));
+    });
+  }
 })();
