@@ -16,5 +16,10 @@
   // Add ARIA role to menubar and menuitems
   document.querySelectorAll('[aria-role="menubar"] li').forEach(listItem => listItem.setAttribute('role', 'menuitem'));
 
-
+  // Set tabindex of submenu's to -1 so that links can't receive focus until menu is open
+  document.querySelectorAll('[aria-role="menubar"] ul').forEach(submenu => {
+    submenu.setAttribute('aria-hidden', 'true');
+    submenu.setAttribute('role', 'menu');
+    submenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', - 1));
+  });
 })();
