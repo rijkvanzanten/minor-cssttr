@@ -22,4 +22,11 @@
     submenu.setAttribute('role', 'menu');
     submenu.querySelectorAll('a').forEach(link => link.setAttribute('tabindex', - 1));
   });
+
+  // Add aria-haspopup for appropriate items
+  document.querySelectorAll('[aria-role="menubar"] > li').forEach(topLevelMenuItem => {
+    if(topLevelMenuItem.querySelectorAll('ul').length) {
+      topLevelMenuItem.setAttribute('aria-haspopup', 'true');
+    }
+  });
 })();
