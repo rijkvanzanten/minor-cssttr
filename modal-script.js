@@ -45,8 +45,8 @@
   // querySelector formatted string for focusable items
   const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contenteditable]';
 
-  // Store item that has focus before opening modal window
-  let focusedElementBeforeModal;
+  // Start with modal when window loads with #login hash
+  if(window.location.hash === '#login') showModal(document.querySelector('#login'));
 
   // Add event listeners
   window.addEventListener('hashchange', () => {
@@ -61,7 +61,7 @@
     trapEscapeKey(this, e);
   });
 
-  document.querySelector('.modal-close-button').addEventListener('click', () => window.location.hash = '');
+  document.querySelector('.modal-close-button').addEventListener('click', hideModal());
 
   function trapEscapeKey(obj, evt) {
     // if escape key
@@ -73,7 +73,7 @@
 
   function setFocusToFirstItemInModal() {
     // Set focus to first keyboard focusable item
-    document.querySelector(`#login ${focusableElementsString}`).focus();
+    document.querySelector('#login').querySelector(focusableElementsString).focus();
   }
 
   function showModal(el) {
@@ -83,9 +83,6 @@
     // Enable modal
     document.querySelector('#login').setAttribute('aria-hidden', false);
 
-    // Save last focussed element
-    focusedElementBeforeModal = document.activeElement;
-
     // Attach a listener to redirect the tab to the modal window if the user somehow gets out of the modal window
     document.querySelector('.main-page').addEventListener('focusin', setFocusToFirstItemInModal);
 
@@ -93,6 +90,8 @@
   }
 
   function hideModal() {
+    if(window.location.hash === '#login') window.location.hash = '';
+
     // Enable main page
     document.querySelector('.main-page').setAttribute('aria-hidden', false);
 
@@ -101,9 +100,6 @@
 
     // Remove listener which redirects tabs to modal
     document.querySelector('.main-page').removeEventListener('focusin', setFocusToFirstItemInModal);
-
-    // Set focus back to element that had it before the modal was opened
-    focusedElementBeforeModal.focus();
   }
 
 }());
