@@ -30,8 +30,8 @@
 
 :root {
   --primary-color: #11ffe0;
-  --text-color: #fff;
-  --background-color: #120a02;
+  --text-color: #333;
+  --background-color: #efefef;
   --scale: 1.618;
   --scale-em: calc(var(--scale) * 1em);
   --gradient: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
@@ -157,7 +157,7 @@ nav ul ul {
   left: -9999px;
   opacity: 0;
   min-width: min-content-width;
-  background: #333;
+  background: var(--background-color);
 }
 
 nav > ul {
