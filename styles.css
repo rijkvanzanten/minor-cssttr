@@ -36,6 +36,8 @@
   --scale-em: calc(var(--scale) * 1em);
   --gradient: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
   --gradient-orange: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+  --light-green: rgba(0, 255, 0, 0.2);
+  --light-red: rgba(255, 0, 0, 0.2);
 }
 
 * {
@@ -89,6 +91,7 @@ input {
   width: 100%;
   box-sizing: border-box;
   padding: 0.5em;
+  border-radius: 0;
 
   /* The shorthand doensn't work as aspected in chrome for some reason */
   border-top: 4px solid transparent;
@@ -99,11 +102,11 @@ input {
 }
 
 input:valid {
-  background-color: rgba(0, 255, 0, 0.2);
+  background-color: var(--light-green);
 }
 
 input:invalid {
-  background-color: rgba(255, 0, 0, 0.2);
+  background-color: var(--light-red);
 }
 
 input:focus {
@@ -137,12 +140,12 @@ input[type=checkbox]:focus + label {
 }
 
 input[type=checkbox] + label {
-  background-color: rgba(255, 0, 0, 0.2);
+  background-color: var(--light-red);
   cursor: pointer;
 }
 
 input[type=checkbox]:checked + label {
-  background-color: rgba(0, 255, 0, 0.2);
+  background-color: var(--light-green);
 }
 
 input[type=checkbox] + label::before {
@@ -153,6 +156,27 @@ input[type=checkbox] + label::before {
 input[type=checkbox]:checked + label::before {
   content: '✅';
   margin-right: 1em;
+}
+
+button[type=submit] {
+  width: 100%;
+  font-size: 1em;
+  padding: 1em;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  margin-top: 3em;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+form:valid button[type=submit] {
+  background-color: var(--light-green);
+}
+
+button[type=submit]:focus {
+  border-image: var(--gradient);
+  border-image-slice: 1;
 }
 
 label {
@@ -436,6 +460,11 @@ div[id=login][aria-hidden=false] > div {
 
 div[id=login][aria-hidden=false] h1 {
   margin: 0;
+}
+
+div[id=login][aria-hidden=false] a {
+  text-align: center;
+  display: block;
 }
 
 div[id=login][aria-hidden=false] + div {
