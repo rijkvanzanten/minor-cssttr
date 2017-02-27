@@ -48,15 +48,32 @@
   // Store item that has focus before opening modal window
   let focusedElementBeforeModal;
 
+  // Add event listeners
   window.addEventListener('hashchange', () => {
     if(window.location.hash === '#login') {
       showModal(document.querySelector('#login'));
+    } else {
+      hideModal();
     }
   });
 
-  function setFocusToFirstItemInModal(el) {
+  document.querySelector('#login').addEventListener('keydown', function(e) {
+    trapEscapeKey(this, e);
+  });
+
+  document.querySelector('.modal-close-button').addEventListener('click', () => window.location.hash = '');
+
+  function trapEscapeKey(obj, evt) {
+    // if escape key
+    if(evt.which == 27) {
+      hideModal();
+      evt.preventDefault();
+    }
+  }
+
+  function setFocusToFirstItemInModal() {
     // Set focus to first keyboard focusable item
-    el.querySelector(focusableElementsString).focus();
+    document.querySelector(`#login ${focusableElementsString}`).focus();
   }
 
   function showModal(el) {
@@ -70,9 +87,23 @@
     focusedElementBeforeModal = document.activeElement;
 
     // Attach a listener to redirect the tab to the modal window if the user somehow gets out of the modal window
-    document.querySelector('.main-page').addEventListener('focusin', () => setFocusToFirstItemInModal(el));
+    document.querySelector('.main-page').addEventListener('focusin', setFocusToFirstItemInModal);
 
     setFocusToFirstItemInModal(el);
+  }
+
+  function hideModal() {
+    // Enable main page
+    document.querySelector('.main-page').setAttribute('aria-hidden', false);
+
+    // Disable modal
+    document.querySelector('#login').setAttribute('aria-hidden', true);
+
+    // Remove listener which redirects tabs to modal
+    document.querySelector('.main-page').removeEventListener('focusin', setFocusToFirstItemInModal);
+
+    // Set focus back to element that had it before the modal was opened
+    focusedElementBeforeModal.focus();
   }
 
 }());
