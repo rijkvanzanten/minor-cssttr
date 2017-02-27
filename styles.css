@@ -13,6 +13,101 @@ html {
   font-family: 'Raleway', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', 'Raleway', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 6;
+  grid-gap: 4vw;
+  transform-style: preserve-3d;
+  transform: translateX(33vw) translateY(-440px) rotateX(45deg) rotateZ(45deg);
+  overflow: visible;
+  width: 120vw;
+  height: 200vh;
+}
+
+main article {
+  position: relative;
+  min-height: 20em;
+  transition: 350ms;
+}
+
+main article:hover {
+  transform: translate(-25px, -25px);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.19), 6px 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+main a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 20em;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  transform: translate(0);
+}
+
+main article:hover a {
+  transform: translate(-10px, -10px);
+  opacity: 1;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+main img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main article h2 {
+  transform: translate(0);
+  text-shadow: 0;
+  transition: all 300ms;
+}
+
+main article:hover h2 {
+  transform: translate(-10px, -10px);
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.19), 6px 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+main article:nth-of-type(6n + 1),
+main article:nth-of-type(6n + 2) {
+  grid-column: span 3;
+}
+
+main article:nth-of-type(6n + 3),
+main article:nth-of-type(6n + 4) {
+  grid-column: span 2;
+}
+
+main article:nth-of-type(6n + 5) {
+  grid-column: 5 / span 2;
+  grid-row: span 2;
+}
+
+main article:nth-of-type(6n + 6) {
+  grid-column: 1 / span 4;
+}
+
 /* ==========================================================================
    Attributes
    ========================================================================== */
@@ -28,6 +123,12 @@ html {
 /* ==========================================================================
    Theme
    ========================================================================== */
+.main-page > div:nth-child(1) {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+}
 
 /* ==========================================================================
    Helpers
