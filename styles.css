@@ -342,11 +342,14 @@ div[id=login][aria-hidden=true] + div {
 div[id=login][aria-hidden=false] {
   position: fixed;
   z-index: 3;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  padding: 5px;
+  top: 10vh;
+  left: 10vw;
+  width: 80vw;
+  height: 80vh;
+  box-sizing: border-box;
+  padding: 2em;
   border: thin #000 solid;
+  margin: 0;
   background-color: #fff;
 }
 
