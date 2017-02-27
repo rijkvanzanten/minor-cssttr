@@ -500,6 +500,7 @@ div[id=login][aria-hidden=false] + div {
   -webkit-appearance: none;
   appearance: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .screen-reader-offscreen {
