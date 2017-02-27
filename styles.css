@@ -86,6 +86,73 @@ header {
 
 input {
   font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+
+  /* The shorthand doensn't work as aspected in chrome for some reason */
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+input:valid {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+input:invalid {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+input:focus {
+  position: relative;
+  border-image: var(--gradient);
+  border-image-slice: 1;
+  outline: 0;
+}
+
+input[type=checkbox] {
+  /* to be able to let people tab into the checkbox */
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+input[type=checkbox] + label {
+  padding: 0.5em;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  margin-top: 3rem;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+input[type=checkbox]:focus + label {
+  border-image: var(--gradient);
+  border-image-slice: 1;
+}
+
+input[type=checkbox] + label {
+  background-color: rgba(255, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+input[type=checkbox] + label::before {
+  content: '❌';
+  margin-right: 1em;
+}
+
+input[type=checkbox]:checked + label::before {
+  content: '✅';
+  margin-right: 1em;
 }
 
 label {
@@ -357,6 +424,8 @@ div[id=login][aria-hidden=false] {
 
 div[id=login][aria-hidden=false] > div {
   position: relative;
+  width: 100%;
+  max-width: 35em;
   box-sizing: border-box;
   padding: 4em;
   border: thin #000 solid;
