@@ -61,7 +61,7 @@
     trapEscapeKey(this, e);
   });
 
-  document.querySelector('.modal-close-button').addEventListener('click', hideModal());
+  document.querySelector('.modal-close-button').addEventListener('click', hideModal);
 
   function trapEscapeKey(obj, evt) {
     // if escape key
