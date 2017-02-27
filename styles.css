@@ -169,6 +169,15 @@ button[type=submit] {
   margin-top: 3em;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
   cursor: pointer;
+  transition: box-shadow 200ms ease;
+}
+
+button[type=submit]:hover {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9), 0 5px 8px rgba(0, 0, 0, 0.16), 0 5px 8px rgba(0, 0, 0, 0.23);
+}
+
+button[type=submit]:active {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
 }
 
 form:valid button[type=submit] {
