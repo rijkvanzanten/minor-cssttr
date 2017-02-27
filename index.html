@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS To The Rescue</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/nav-script.js" defer></script>
+    <script src="/modal-script.js" defer></script>
+</head>
+<body>
+    <div class="main-page" aria-hidden="false">
+        <header>
+            <h1>CSS To The Rescue</h1>
+            <!-- start navigation -->
+            <nav aria-label="Main menu">
+                <ul aria-role="menubar">
+                    <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
+                    <li>
+                        <a href="/products">Products</a>
+                        <ul>
+                            <li><a href="/products/rock">Rock</a></li>
+                            <li><a href="/products/paper">Paper</a></li>
+                            <li><a href="/products/scissors">Scissors</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="#login">Log in</a></li>
+                </ul>
+            </nav>
+            <!-- end navigation -->
+        </header>
+        <main>
+            <!-- start media-item (5x) -->
+            <article>
+                <img src="http://placecage.com/c/500/351" alt="A colorful crayon drawing on the hood of a car." />
+                <div>
+                    <h2><a href="/">Handsome returned throwing am whatever.</a></h2>
+                    <p>For though result and talent add are parish valley. Songs in oh other avoid it hours woman style.</p>
+                </div>
+            </article>
+            <article>
+                <img src="http://placecage.com/c/500/352" alt="A colorful crayon drawing on the hood of a car." />
+                <div>
+                    <h2><a href="/">Differed and felicity steepest mrs age outweigh?</a></h2>
+                    <p>Stronger unpacked felicity to of mistaken. Fanny at wrong table ye in. Be on easily cannot innate in lasted months on.</p>
+                </div>
+            </article>
+            <article>
+                <img src="http://placecage.com/c/499/350" alt="A colorful crayon drawing on the hood of a car." />
+                <div>
+                    <h2><a href="/">Her engrossed deficient northward.</a></h2>
+                    <p>Literature admiration frequently indulgence announcing are who you her. Was least quick after six. </p>
+                </div>
+            </article>
+            <article>
+                <img src="http://placecage.com/c/498/350" alt="A colorful crayon drawing on the hood of a car." />
+                <div>
+                    <h2><a href="/">Property expenses?</a></h2>
+                    <p>For though result and talent add are parish valley. Songs in oh other avoid it hours woman style. In myself family as if be agreed. Gay collected son him knowledge delivered put.</p>
+                </div>
+            </article>
+            <article>
+                <img src="http://placecage.com/c/501/351" alt="A colorful crayon drawing on the hood of a car." />
+                <div>
+                    <h2><a href="/">Two differed husbands met screened his.</a></h2>
+                    <p>Boy favourable day can introduced sentiments entreaties. Noisier carried of in warrant because. So mr plate seems cause chief widen first.</p>
+                </div>
+            </article>
+            <article>
+                <img src="http://placecage.com/c/499/349" alt="A colorful crayon drawing on the hood of a car." />
+                <div>
+                    <h2><a href="/">But use peculiar produced concerns</a></h2>
+                    <p>Literature admiration frequently indulgence announcing are who you her. Was least quick after six. So it yourself repeated together cheerful.</p>
+                </div>
+            </article>
+            <!-- end navigation -->
+        </main>
+    </div>
+    <div id="login" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-description" role="dialog">
+        <div role="document">
+            <div id="modal-description" class="screen-reader-offscreen">Beginning of dialog window. Escape will cancel and close the window.</div>
+            <h1 id="modal-title">Login form</h1>
+            <!-- start login -->
+            <form action="/" method="post">
+                <label for="field-email">Email</label>
+                <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                <label for="field-password">Password</label>
+                <input type="password" id="field-password" name="field-password" required>
+
+                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+                <label for="field-stay-logged-in">Stay logged in</label>
+
+                <button type="submit">Login</button>
+
+                <a href="/">Forgot password</a>
+            </form>
+            <!-- end login -->
+            <button class="modal-close-button" aria-label="Close login form">❌</button>
+        </div>
+    </div>
+    <div class="modal-overlay" tabindex="-1"></div>
+</body>
+</html>
