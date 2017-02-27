@@ -25,6 +25,7 @@
                 </li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
+                <li><a href="#login">Log in</a></li>
             </ul>
         </nav>
         <!-- end navigation -->
@@ -75,5 +76,29 @@
         </article>
         <!-- end navigation -->
     </main>
+    <div id="login" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-description" role="dialog">
+        <div role="document">
+            <div id="modal-description" class="screen-reader-offscreen">Beginning of dialog window. It begins with heading 1 called Registration Form. Escape will cancel and close the window.</div>
+            <h1 id="modal-title">Login form</h1>
+            <!-- start login -->
+            <form action="/" method="post">
+                <label for="field-email">Email</label>
+                <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+
+                <label for="field-password">Password</label>
+                <input type="password" id="field-password" name="field-password" required>
+
+                <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+                <label for="field-stay-logged-in">Stay logged in</label>
+
+                <a href="/">Forgot password</a>
+
+                <button type="submit">Login</button>
+            </form>
+            <!-- end login -->
+            <button class="modal-close-button" title="Close login form">❌</button>
+        </div>
+    </div>
+    <div class="modal-overlay" tabindex="-1"></div>
 </body>
 </html>
