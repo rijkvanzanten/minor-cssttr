@@ -105,9 +105,9 @@ h1 {
   padding: 0.5em;
   background: var(--gradient);
   -webkit-background-clip: text;
-  -webkit-text-stroke: 4px transparent;
+  -webkit-text-stroke: 0.1em transparent;
   letter-spacing: 10px;
-  color: black;
+  color: var(--background-color);
 }
 
 h2 {
@@ -200,12 +200,19 @@ main {
 
 article {
   display: flex;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   border-image: var(--gradient-orange);
   border-image-slice: 1;
+
+  /* The shorthand doensn't work as aspected in chrome for some reason */
   border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
   margin: 0 auto;
+  background-color: white;
 }
 
 article div {
@@ -220,6 +227,7 @@ article img {
   height: 100%;
   flex-basis: 25%;
   margin: 0;
+  object-fit: cover;
 }
 
 article:first-of-type img {
@@ -237,6 +245,7 @@ article p {
     main {
       display: grid;
       grid-template-columns: 6;
+      grid-gap: 2vw;
     }
 
     article:nth-of-type(1) {
