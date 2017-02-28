@@ -213,13 +213,16 @@ input {
   box-sizing: border-box;
   padding: 0.5em;
   border-radius: 0;
+  border: 2px solid black;
+}
 
-  /* The shorthand doensn't work as aspected in chrome for some reason */
-  border-top: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid transparent;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+input:focus,
+input[type=checkbox]:focus + label,
+button[type=submit]:focus,
+button[type=submit] + a:focus,
+.modal-close-button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px red;
 }
 
 input:valid {
@@ -243,11 +246,7 @@ label {
 
 input[type=checkbox] + label {
   padding: 0.5em;
-  border-top: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid transparent;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+  border: 2px solid black;
   cursor: pointer;
 }
 
