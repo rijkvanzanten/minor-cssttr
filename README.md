@@ -31,4 +31,4 @@ The modal is based on Greg Kraus' [accessible-modal-dialog](https://github.com/g
 
 🎉
 
-[https://rijkvanzanten.github.io/minor-cssttr/styleguide.html](https://rijkvanzanten.github.io/minor-cssttr/styleguide.html)
+[https://rijkvanzanten.github.io/minor-cssttr/index.html](https://rijkvanzanten.github.io/minor-cssttr/index.html)
