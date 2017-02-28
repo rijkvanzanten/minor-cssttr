@@ -363,7 +363,9 @@ figure picture::after {
 /* Rating
    ========================================================================== */
 fieldset {
-  max-width: 50%;
+  width: 100%;
+  max-width: 30em;
+  box-sizing: border-box;
   border: 1px dashed black;
   margin-top: 1em;
 }
