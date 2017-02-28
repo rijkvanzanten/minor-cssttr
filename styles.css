@@ -36,6 +36,8 @@ header {
   margin-bottom: 0;
 }
 
+/* Nav
+   ========================================================================== */
 nav {
   margin-top: 1em;
 }
@@ -104,7 +106,11 @@ nav a:hover::after {
   transform: scaleX(1);
 }
 
+/* Articles
+   ========================================================================== */
 main {
+  display: flex;
+  flex-wrap: wrap;
   display: grid;
   grid-template-columns: 6;
   grid-gap: 4vw;
@@ -119,7 +125,14 @@ main {
 main article {
   position: relative;
   min-height: 20em;
+  margin: 2vw;
   transition: 350ms;
+}
+
+@supports (display: grid) {
+  main article {
+    margin: 0;
+  }
 }
 
 main article:hover {
