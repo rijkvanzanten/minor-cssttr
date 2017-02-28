@@ -203,6 +203,91 @@ main article:nth-of-type(6n + 6) {
   grid-column: 1 / span 4;
 }
 
+input {
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+  border-radius: 0;
+
+  /* The shorthand doensn't work as aspected in chrome for some reason */
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+input:valid {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+input[type=checkbox] {
+  /* to be able to let people tab into the checkbox */
+  position: absolute;
+  left: -9999999px;
+  display: block;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+label {
+  display: block;
+  margin-top: 2em;
+}
+
+input[type=checkbox] + label {
+  padding: 0.5em;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + label {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+input[type=checkbox] + label::before {
+  content: '❌';
+  margin-right: 1em;
+}
+
+input[type=checkbox]:checked + label::before {
+  content: '✅';
+  margin-right: 1em;
+}
+
+button[type=submit] {
+  width: 100%;
+  font-size: 1em;
+  padding: 1em;
+  border-top: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: box-shadow 200ms ease;
+}
+
+button[type=submit]:hover {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9), 0 5px 8px rgba(0, 0, 0, 0.16), 0 5px 8px rgba(0, 0, 0, 0.23);
+}
+
+button[type=submit]:active {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+form:valid button[type=submit] {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
 /* ==========================================================================
    Attributes
    ========================================================================== */
@@ -216,6 +301,83 @@ main article:nth-of-type(6n + 6) {
 /* ==========================================================================
    Components
    ========================================================================== */
+
+/* Modal
+   ========================================================================== */
+div[id=login] {
+  display: none;
+}
+
+div[id=login] + div {
+  display: none;
+}
+
+div[id=login]:target {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div[id=login]:target > div {
+  position: relative;
+  overflow: scroll;
+  width: 100%;
+  max-width: 35em;
+  box-sizing: border-box;
+  padding: 4em;
+  border: thin #000 solid;
+  margin: 0;
+  background-color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+}
+
+div[id=login]:target h1 {
+  margin: 0;
+}
+
+div[id=login]:target a {
+  text-align: center;
+  display: block;
+}
+
+div[id=login]:target + div {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  margin: 0;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: 0;
+  margin: 0;
+  font-size: 1.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.screen-reader-offscreen {
+  position: absolute;
+  left: -99999px;
+}
 
 /* ==========================================================================
    Layout
