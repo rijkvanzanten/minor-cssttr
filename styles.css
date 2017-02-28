@@ -309,8 +309,8 @@ figure {
   }
 
   figcaption {
-    margin-left: 2em;
     max-width: 30em;
+    margin-left: 2em;
   }
 }
 
@@ -382,6 +382,7 @@ fieldset div {
 }
 
 fieldset label {
+  width: 2rem;
   flex-basis: 2rem;
   font-size: 0;
   cursor: pointer;
