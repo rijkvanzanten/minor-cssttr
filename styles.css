@@ -299,15 +299,45 @@ figure {
   display: flex;
   height: 100%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   perspective: 1000px;
+}
+
+@media (orientation: landscape) {
+  figure {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  figcaption {
+    margin-left: 2em;
+    max-width: 30em;
+  }
+}
+
+figcaption {
+  line-height: 145%;
+}
+
+figcaption footer {
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  margin-top: 1em;
 }
 
 figure picture {
   position: relative;
   width: 80%;
-  margin: auto;
+  max-width: 20em;
+  margin: 2em auto;
   transform: rotate(1deg);
+}
+
+@media (orientation: landscape) {
+  figure picture {
+    margin: 2em;
+  }
 }
 
 figure picture::before,
@@ -446,7 +476,6 @@ div[id=login]:target + div {
 }
 
 .main-page > div:nth-child(2) {
-  height: 70vh;
   padding: 1em;
 }
 
