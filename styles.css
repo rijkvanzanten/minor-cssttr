@@ -297,7 +297,6 @@ form:valid button[type=submit] {
 figure {
   position: relative;
   display: flex;
-  height: 100%;
   flex-direction: column;
   justify-content: center;
   perspective: 1000px;
@@ -492,6 +491,7 @@ div[id=login]:target + div {
 }
 
 .main-page > div:nth-child(2) {
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
