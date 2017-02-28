@@ -328,13 +328,13 @@ figcaption footer {
 figure picture {
   position: relative;
   width: 80%;
-  max-width: 20em;
   margin: 2em auto;
   transform: rotate(1deg);
 }
 
 @media (orientation: landscape) {
   figure picture {
+    max-width: 10em;
     margin: 2em;
   }
 }
