@@ -309,7 +309,9 @@ div[id=login] {
 }
 
 div[id=login] + div {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: 200ms ease;
 }
 
 div[id=login]:target {
@@ -335,7 +337,19 @@ div[id=login]:target > div {
   margin: 0;
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  animation: fadeIn 340ms ease forwards;
+}
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 div[id=login]:target h1 {
