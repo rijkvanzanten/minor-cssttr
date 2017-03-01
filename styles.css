@@ -218,7 +218,6 @@ input {
 input:focus,
 a:focus,
 input[type=checkbox]:focus + label,
-input[type=radio]:focus + label,
 button[type=submit]:focus,
 button[type=submit] + a:focus,
 .modal-close-button:focus {
