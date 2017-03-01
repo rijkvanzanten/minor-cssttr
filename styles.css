@@ -518,6 +518,93 @@ div[id=login]:target + div {
   left: -99999px;
 }
 
+/* Chat
+   ========================================================================== */
+.chat {
+  position: relative;
+  left: 2em;
+  display: flex;
+  width: 100%;
+  min-height: 15em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  transform: skew(-50deg);
+}
+
+.chat li {
+  transform: skewX(50deg);
+  transition: 300ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.chat li > p {
+  background-color: white;
+  width: -webkit-max-content;
+  width: max-content;
+  padding: 1em 2em;
+  border-radius: 2em;
+}
+
+.chat li footer {
+  opacity: 0;
+  transition: 300ms ease;
+  text-align: right;
+  font-size: 0.8em;
+  color: gray;
+  padding-right: 2em;
+}
+
+.chat li:nth-child(1) {
+  opacity: 0.5;
+  filter: blur(7px);
+  transform: skewX(40deg) scale(0.6);
+}
+
+.chat li:nth-child(2) {
+  opacity: 0.7;
+  filter: blur(2px);
+  transform: skewX(40deg) scale(0.8);
+}
+
+.chat li:nth-child(2) > p {
+  border: 2px solid hsla(250, 80%, 50%, 0.6);
+}
+
+.chat li:nth-child(3) > p {
+  position: relative;
+}
+
+.chat li:nth-child(3) > p::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 4.6em;
+  display: block;
+  width: 70%;
+  height: 70%;
+  border-radius: 2em;
+  opacity: 0.5;
+  background-color: white;
+  transform: skew(-30deg);
+  filter: blur(3px);
+}
+
+.chat li:hover {
+  filter: blur(0);
+  transform: skewX(50deg) scale(1);
+  opacity: 1;
+}
+
+.chat li:hover footer {
+  opacity: 1;
+}
+
 /* ==========================================================================
    Layout
    ========================================================================== */
@@ -535,6 +622,11 @@ div[id=login]:target + div {
   margin-bottom: 1em;
 }
 
+.main-page > div:nth-child(3) {
+  overflow: hidden;
+  padding: 3em;
+}
+
 /* ==========================================================================
    Theme
    ========================================================================== */
@@ -548,6 +640,10 @@ div[id=login]:target + div {
   flex-direction: column;
   justify-content: space-around;
   background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+.main-page > div:nth-child(3) {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
 /* ==========================================================================
